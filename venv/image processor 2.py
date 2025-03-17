@@ -45,9 +45,9 @@ def encode_image(image_path):
         raise FileNotFoundError(f"Image file not found at {image_path}")
     except OSError as e:
         logging.error(f"OS Error: {e}")
-        raise OSError(f"OS Error: {e}")
+        raise OSError(f"OS Error: {e}") #why am i doing this??
 
-
+# run iference
 def run_inference(image_path, confidence_threshold=0.3):
     if not os.path.exists(image_path):
         logging.error(f"Inference failed: Image file not found at {image_path}")
@@ -120,7 +120,7 @@ def notify_user(predictions, alert_threshold=0.5):
         logging.error(f"Error in notification system: {e}")
 
 
-if __name__ == "__main__":
+def main():
     logging.info("Starting the script.")
     try:
         while True:
@@ -138,3 +138,7 @@ if __name__ == "__main__":
 
     except KeyboardInterrupt:
         logging.info("Script terminated by user.")
+
+if __name__ == "__main__":
+    main()
+
