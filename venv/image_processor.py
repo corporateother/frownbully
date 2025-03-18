@@ -177,9 +177,11 @@ def save_predictions_to_db(image_path, parsed_results):
         conn.close()
 
 
-#Notifications
+# Notifications
 def notify_user(predictions, alert_threshold=0.3):
     logging.info("Checking predictions for notifications.")
+
+    notification_triggered = "NO"  # Default to NO
 
     try:
         for label, confidence in predictions.items():
@@ -190,10 +192,32 @@ def notify_user(predictions, alert_threshold=0.3):
                     message="You are frowning, try to relax your face",
                     timeout=5
                 )
+                notification_triggered = "YES"
             else:
                 logging.info(f"No notification triggered for: {label} with confidence: {confidence * 100:.2f}%")
     except Exception as e:
         logging.error(f"Error in notification system: {e}")
+
+    # Save notification status and threshold to the database
+    save_notification_to_db(notification_triggered, alert_threshold)
+
+
+def save_notification_to_db(notification_status, threshold):
+    conn = sqlite3.connect("wrinkle_detection.db")
+    cursor = conn.cursor()
+
+    try:
+        cursor.execute('''
+            UPDATE detections 
+            SET notification = ?, notification_threshold = ? 
+            WHERE id = (SELECT MAX(id) FROM detections)
+        ''', (notification_status, threshold))
+        conn.commit()
+        logging.info(f"Notification status '{notification_status}' and threshold '{threshold}' saved to database.")
+    except sqlite3.Error as e:
+        logging.error(f"Error updating database with notification status: {e}")
+    finally:
+        conn.close()
 
 
 def main():
