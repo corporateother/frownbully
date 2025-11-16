@@ -1,0 +1,162 @@
+2025-11-07 15:30:40,340 - INFO - Image processor module initialized.
+2025-11-07 15:34:27,045 - INFO - Continuous detection loop started.
+2025-11-07 15:34:27,046 - INFO - Detection started and thread launched.
+2025-11-07 15:34:28,057 - INFO - Folder ensured at: C:\Users\katya\AppData\Local\frownbully\detections
+2025-11-07 15:34:28,057 - INFO - Capturing image from webcam.
+2025-11-07 15:34:32,327 - INFO - Detection stopped.
+2025-11-07 15:34:33,302 - INFO - Continuous detection loop started.
+2025-11-07 15:34:33,303 - INFO - Detection started and thread launched.
+2025-11-07 15:34:34,317 - INFO - Folder ensured at: C:\Users\katya\AppData\Local\frownbully\detections
+2025-11-07 15:34:34,317 - INFO - Capturing image from webcam.
+2025-11-07 15:34:35,091 - INFO - Detection stopped.
+2025-11-07 15:34:35,392 - INFO - Image captured successfully: C:\Users\katya\AppData\Local\frownbully\detections\20251107_153428.jpg
+2025-11-07 15:34:35,689 - INFO - Image path saved to database: C:\Users\katya\AppData\Local\frownbully\detections\20251107_153428.jpg
+2025-11-07 15:34:35,689 - INFO - Running inference on image: C:\Users\katya\AppData\Local\frownbully\detections\20251107_153428.jpg
+2025-11-07 15:34:36,404 - INFO - Continuous detection loop started.
+2025-11-07 15:34:36,404 - INFO - Detection started and thread launched.
+2025-11-07 15:34:37,407 - INFO - Folder ensured at: C:\Users\katya\AppData\Local\frownbully\detections
+2025-11-07 15:34:37,407 - INFO - Capturing image from webcam.
+2025-11-07 15:34:40,885 - INFO - Inference completed successfully.
+2025-11-07 15:34:40,885 - INFO - Parsing inference results.
+2025-11-07 15:34:40,886 - INFO - Parsed results: {}
+2025-11-07 15:34:40,886 - WARNING - No predictions found for C:\Users\katya\AppData\Local\frownbully\detections\20251107_153428.jpg, skipping database update.
+2025-11-07 15:34:40,886 - INFO - Checking predictions for notifications.
+2025-11-07 15:34:40,895 - INFO - Notification status 'NO' and threshold '0.3' saved to database.
+2025-11-07 15:34:41,904 - INFO - Folder ensured at: C:\Users\katya\AppData\Local\frownbully\detections
+2025-11-07 15:34:41,904 - INFO - Capturing image from webcam.
+2025-11-07 15:34:42,476 - INFO - Image captured successfully: C:\Users\katya\AppData\Local\frownbully\detections\20251107_153434.jpg
+2025-11-07 15:34:42,767 - INFO - Image path saved to database: C:\Users\katya\AppData\Local\frownbully\detections\20251107_153434.jpg
+2025-11-07 15:34:42,768 - INFO - Running inference on image: C:\Users\katya\AppData\Local\frownbully\detections\20251107_153434.jpg
+2025-11-07 15:34:45,606 - INFO - Image captured successfully: C:\Users\katya\AppData\Local\frownbully\detections\20251107_153437.jpg
+2025-11-07 15:34:45,908 - INFO - Image path saved to database: C:\Users\katya\AppData\Local\frownbully\detections\20251107_153437.jpg
+2025-11-07 15:34:45,909 - INFO - Running inference on image: C:\Users\katya\AppData\Local\frownbully\detections\20251107_153437.jpg
+2025-11-07 15:34:47,745 - INFO - Inference completed successfully.
+2025-11-07 15:34:47,745 - INFO - Parsing inference results.
+2025-11-07 15:34:47,745 - INFO - Parsed results: {}
+2025-11-07 15:34:47,745 - WARNING - No predictions found for C:\Users\katya\AppData\Local\frownbully\detections\20251107_153437.jpg, skipping database update.
+2025-11-07 15:34:47,745 - INFO - Checking predictions for notifications.
+2025-11-07 15:34:47,754 - INFO - Notification status 'NO' and threshold '0.3' saved to database.
+2025-11-07 15:34:48,320 - INFO - Inference completed successfully.
+2025-11-07 15:34:48,320 - INFO - Parsing inference results.
+2025-11-07 15:34:48,320 - INFO - Parsed results: {}
+2025-11-07 15:34:48,320 - WARNING - No predictions found for C:\Users\katya\AppData\Local\frownbully\detections\20251107_153434.jpg, skipping database update.
+2025-11-07 15:34:48,320 - INFO - Checking predictions for notifications.
+2025-11-07 15:34:48,321 - INFO - Notification status 'NO' and threshold '0.3' saved to database.
+2025-11-07 15:34:48,576 - INFO - Image captured successfully: C:\Users\katya\AppData\Local\frownbully\detections\20251107_153441.jpg
+2025-11-07 15:34:48,771 - INFO - Folder ensured at: C:\Users\katya\AppData\Local\frownbully\detections
+2025-11-07 15:34:48,771 - INFO - Capturing image from webcam.
+2025-11-07 15:34:48,846 - INFO - Image path saved to database: C:\Users\katya\AppData\Local\frownbully\detections\20251107_153441.jpg
+2025-11-07 15:34:48,846 - INFO - Running inference on image: C:\Users\katya\AppData\Local\frownbully\detections\20251107_153441.jpg
+2025-11-07 15:34:49,335 - INFO - Folder ensured at: C:\Users\katya\AppData\Local\frownbully\detections
+2025-11-07 15:34:49,335 - INFO - Capturing image from webcam.
+2025-11-07 15:34:52,206 - INFO - Inference completed successfully.
+2025-11-07 15:34:52,206 - INFO - Parsing inference results.
+2025-11-07 15:34:52,206 - INFO - Parsed results: {'sad_smile': 0.48729999999999996}
+2025-11-07 15:34:52,207 - INFO - Executing SQL: UPDATE detections SET sad_smile = ? WHERE image_path = ? with values [0.48729999999999996, 'C:\\Users\\katya\\AppData\\Local\\frownbully\\detections\\20251107_153441.jpg']
+2025-11-07 15:34:52,216 - INFO - Predictions saved to database for C:\Users\katya\AppData\Local\frownbully\detections\20251107_153441.jpg: {'sad_smile': 0.48729999999999996}
+2025-11-07 15:34:52,216 - INFO - Checking predictions for notifications.
+2025-11-07 15:34:52,217 - INFO - Triggering notification for: sad_smile with confidence: 48.73%
+2025-11-07 15:34:52,242 - INFO - Notification status 'YES' and threshold '0.3' saved to database.
+2025-11-07 15:34:53,250 - INFO - Folder ensured at: C:\Users\katya\AppData\Local\frownbully\detections
+2025-11-07 15:34:53,250 - INFO - Capturing image from webcam.
+2025-11-07 15:34:57,630 - INFO - Image captured successfully: C:\Users\katya\AppData\Local\frownbully\detections\20251107_153448.jpg
+2025-11-07 15:34:57,928 - INFO - Image path saved to database: C:\Users\katya\AppData\Local\frownbully\detections\20251107_153448.jpg
+2025-11-07 15:34:57,929 - INFO - Running inference on image: C:\Users\katya\AppData\Local\frownbully\detections\20251107_153448.jpg
+2025-11-07 15:34:58,524 - INFO - Image captured successfully: C:\Users\katya\AppData\Local\frownbully\detections\20251107_153449.jpg
+2025-11-07 15:34:58,823 - INFO - Image path saved to database: C:\Users\katya\AppData\Local\frownbully\detections\20251107_153449.jpg
+2025-11-07 15:34:58,823 - INFO - Running inference on image: C:\Users\katya\AppData\Local\frownbully\detections\20251107_153449.jpg
+2025-11-07 15:34:59,917 - INFO - Inference completed successfully.
+2025-11-07 15:34:59,917 - INFO - Parsing inference results.
+2025-11-07 15:34:59,917 - INFO - Parsed results: {}
+2025-11-07 15:34:59,917 - WARNING - No predictions found for C:\Users\katya\AppData\Local\frownbully\detections\20251107_153448.jpg, skipping database update.
+2025-11-07 15:34:59,917 - INFO - Checking predictions for notifications.
+2025-11-07 15:34:59,924 - INFO - Notification status 'NO' and threshold '0.3' saved to database.
+2025-11-07 15:35:00,926 - INFO - Folder ensured at: C:\Users\katya\AppData\Local\frownbully\detections
+2025-11-07 15:35:00,926 - INFO - Capturing image from webcam.
+2025-11-07 15:35:01,333 - INFO - Image captured successfully: C:\Users\katya\AppData\Local\frownbully\detections\20251107_153453.jpg
+2025-11-07 15:35:01,591 - INFO - Inference completed successfully.
+2025-11-07 15:35:01,591 - INFO - Parsing inference results.
+2025-11-07 15:35:01,591 - INFO - Parsed results: {}
+2025-11-07 15:35:01,591 - WARNING - No predictions found for C:\Users\katya\AppData\Local\frownbully\detections\20251107_153449.jpg, skipping database update.
+2025-11-07 15:35:01,591 - INFO - Checking predictions for notifications.
+2025-11-07 15:35:01,592 - INFO - Notification status 'NO' and threshold '0.3' saved to database.
+2025-11-07 15:35:01,635 - INFO - Image path saved to database: C:\Users\katya\AppData\Local\frownbully\detections\20251107_153453.jpg
+2025-11-07 15:35:01,635 - INFO - Running inference on image: C:\Users\katya\AppData\Local\frownbully\detections\20251107_153453.jpg
+2025-11-07 15:35:02,593 - INFO - Folder ensured at: C:\Users\katya\AppData\Local\frownbully\detections
+2025-11-07 15:35:02,593 - INFO - Capturing image from webcam.
+2025-11-07 15:35:05,008 - INFO - Inference completed successfully.
+2025-11-07 15:35:05,008 - INFO - Parsing inference results.
+2025-11-07 15:35:05,008 - INFO - Parsed results: {}
+2025-11-07 15:35:05,008 - WARNING - No predictions found for C:\Users\katya\AppData\Local\frownbully\detections\20251107_153453.jpg, skipping database update.
+2025-11-07 15:35:05,008 - INFO - Checking predictions for notifications.
+2025-11-07 15:35:05,017 - INFO - Notification status 'NO' and threshold '0.3' saved to database.
+2025-11-07 15:35:06,022 - INFO - Folder ensured at: C:\Users\katya\AppData\Local\frownbully\detections
+2025-11-07 15:35:06,022 - INFO - Capturing image from webcam.
+2025-11-07 15:35:08,556 - INFO - Image captured successfully: C:\Users\katya\AppData\Local\frownbully\detections\20251107_153500.jpg
+2025-11-07 15:35:08,844 - INFO - Image path saved to database: C:\Users\katya\AppData\Local\frownbully\detections\20251107_153500.jpg
+2025-11-07 15:35:08,844 - INFO - Running inference on image: C:\Users\katya\AppData\Local\frownbully\detections\20251107_153500.jpg
+2025-11-07 15:35:10,725 - INFO - Image captured successfully: C:\Users\katya\AppData\Local\frownbully\detections\20251107_153502.jpg
+2025-11-07 15:35:10,731 - INFO - Inference completed successfully.
+2025-11-07 15:35:10,731 - INFO - Parsing inference results.
+2025-11-07 15:35:10,731 - INFO - Parsed results: {}
+2025-11-07 15:35:10,731 - WARNING - No predictions found for C:\Users\katya\AppData\Local\frownbully\detections\20251107_153500.jpg, skipping database update.
+2025-11-07 15:35:10,731 - INFO - Checking predictions for notifications.
+2025-11-07 15:35:10,741 - INFO - Notification status 'NO' and threshold '0.3' saved to database.
+2025-11-07 15:35:11,011 - INFO - Image path saved to database: C:\Users\katya\AppData\Local\frownbully\detections\20251107_153502.jpg
+2025-11-07 15:35:11,011 - INFO - Running inference on image: C:\Users\katya\AppData\Local\frownbully\detections\20251107_153502.jpg
+2025-11-07 15:35:11,746 - INFO - Folder ensured at: C:\Users\katya\AppData\Local\frownbully\detections
+2025-11-07 15:35:11,747 - INFO - Capturing image from webcam.
+2025-11-07 15:35:12,929 - INFO - Inference completed successfully.
+2025-11-07 15:35:12,930 - INFO - Parsing inference results.
+2025-11-07 15:35:12,930 - INFO - Parsed results: {}
+2025-11-07 15:35:12,930 - WARNING - No predictions found for C:\Users\katya\AppData\Local\frownbully\detections\20251107_153502.jpg, skipping database update.
+2025-11-07 15:35:12,930 - INFO - Checking predictions for notifications.
+2025-11-07 15:35:12,938 - INFO - Notification status 'NO' and threshold '0.3' saved to database.
+2025-11-07 15:35:13,847 - INFO - Image captured successfully: C:\Users\katya\AppData\Local\frownbully\detections\20251107_153506.jpg
+2025-11-07 15:35:13,943 - INFO - Folder ensured at: C:\Users\katya\AppData\Local\frownbully\detections
+2025-11-07 15:35:13,943 - INFO - Capturing image from webcam.
+2025-11-07 15:35:14,129 - INFO - Image path saved to database: C:\Users\katya\AppData\Local\frownbully\detections\20251107_153506.jpg
+2025-11-07 15:35:14,129 - INFO - Running inference on image: C:\Users\katya\AppData\Local\frownbully\detections\20251107_153506.jpg
+2025-11-07 15:35:16,947 - INFO - Inference completed successfully.
+2025-11-07 15:35:16,947 - INFO - Parsing inference results.
+2025-11-07 15:35:16,947 - INFO - Parsed results: {'frown_line': 0.787}
+2025-11-07 15:35:16,948 - INFO - Executing SQL: UPDATE detections SET frown_line = ? WHERE image_path = ? with values [0.787, 'C:\\Users\\katya\\AppData\\Local\\frownbully\\detections\\20251107_153506.jpg']
+2025-11-07 15:35:16,955 - INFO - Predictions saved to database for C:\Users\katya\AppData\Local\frownbully\detections\20251107_153506.jpg: {'frown_line': 0.787}
+2025-11-07 15:35:16,955 - INFO - Checking predictions for notifications.
+2025-11-07 15:35:16,955 - INFO - Triggering notification for: frown_line with confidence: 78.70%
+2025-11-07 15:35:16,964 - INFO - Notification status 'YES' and threshold '0.3' saved to database.
+2025-11-07 15:35:17,975 - INFO - Folder ensured at: C:\Users\katya\AppData\Local\frownbully\detections
+2025-11-07 15:35:17,975 - INFO - Capturing image from webcam.
+2025-11-07 15:35:19,881 - INFO - Image captured successfully: C:\Users\katya\AppData\Local\frownbully\detections\20251107_153511.jpg
+2025-11-07 15:35:20,157 - INFO - Image path saved to database: C:\Users\katya\AppData\Local\frownbully\detections\20251107_153511.jpg
+2025-11-07 15:35:20,158 - INFO - Running inference on image: C:\Users\katya\AppData\Local\frownbully\detections\20251107_153511.jpg
+2025-11-07 15:35:22,402 - INFO - Image captured successfully: C:\Users\katya\AppData\Local\frownbully\detections\20251107_153513.jpg
+2025-11-07 15:35:22,689 - INFO - Image path saved to database: C:\Users\katya\AppData\Local\frownbully\detections\20251107_153513.jpg
+2025-11-07 15:35:22,689 - INFO - Running inference on image: C:\Users\katya\AppData\Local\frownbully\detections\20251107_153513.jpg
+2025-11-07 15:35:23,403 - INFO - Detection stopped.
+2025-11-07 15:35:23,410 - INFO - Inference completed successfully.
+2025-11-07 15:35:23,410 - INFO - Parsing inference results.
+2025-11-07 15:35:23,410 - INFO - Parsed results: {}
+2025-11-07 15:35:23,410 - WARNING - No predictions found for C:\Users\katya\AppData\Local\frownbully\detections\20251107_153511.jpg, skipping database update.
+2025-11-07 15:35:23,410 - INFO - Checking predictions for notifications.
+2025-11-07 15:35:23,420 - INFO - Notification status 'NO' and threshold '0.3' saved to database.
+2025-11-07 15:35:23,422 - INFO - Continuous detection loop terminated.
+2025-11-07 15:35:25,470 - INFO - Inference completed successfully.
+2025-11-07 15:35:25,470 - INFO - Parsing inference results.
+2025-11-07 15:35:25,470 - INFO - Parsed results: {}
+2025-11-07 15:35:25,470 - WARNING - No predictions found for C:\Users\katya\AppData\Local\frownbully\detections\20251107_153513.jpg, skipping database update.
+2025-11-07 15:35:25,470 - INFO - Checking predictions for notifications.
+2025-11-07 15:35:25,471 - INFO - Notification status 'NO' and threshold '0.3' saved to database.
+2025-11-07 15:35:25,471 - INFO - Continuous detection loop terminated.
+2025-11-07 15:35:25,500 - INFO - Image captured successfully: C:\Users\katya\AppData\Local\frownbully\detections\20251107_153517.jpg
+2025-11-07 15:35:25,802 - INFO - Image path saved to database: C:\Users\katya\AppData\Local\frownbully\detections\20251107_153517.jpg
+2025-11-07 15:35:25,803 - INFO - Running inference on image: C:\Users\katya\AppData\Local\frownbully\detections\20251107_153517.jpg
+2025-11-07 15:35:28,670 - INFO - Inference completed successfully.
+2025-11-07 15:35:28,670 - INFO - Parsing inference results.
+2025-11-07 15:35:28,670 - INFO - Parsed results: {'forehead': 0.6455}
+2025-11-07 15:35:28,670 - INFO - Executing SQL: UPDATE detections SET forehead = ? WHERE image_path = ? with values [0.6455, 'C:\\Users\\katya\\AppData\\Local\\frownbully\\detections\\20251107_153517.jpg']
+2025-11-07 15:35:28,679 - INFO - Predictions saved to database for C:\Users\katya\AppData\Local\frownbully\detections\20251107_153517.jpg: {'forehead': 0.6455}
+2025-11-07 15:35:28,679 - INFO - Checking predictions for notifications.
+2025-11-07 15:35:28,679 - INFO - Triggering notification for: forehead with confidence: 64.55%
+2025-11-07 15:35:28,689 - INFO - Notification status 'YES' and threshold '0.3' saved to database.
+2025-11-07 15:35:28,689 - INFO - Continuous detection loop terminated.

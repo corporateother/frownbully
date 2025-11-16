@@ -1,0 +1,28 @@
+2025-10-24 18:35:19,200 - INFO - Starting the script.
+2025-10-24 18:35:20,216 - INFO - Folder ensured at: C:\Users\katya\AppData\Local\frownbully\detections
+2025-10-24 18:35:20,216 - INFO - Capturing image from webcam.
+2025-10-24 18:35:27,047 - INFO - Image captured successfully: C:\Users\katya\AppData\Local\frownbully\detections\20251024_183520.jpg
+2025-10-24 18:35:27,342 - INFO - Image path saved to database: C:\Users\katya\AppData\Local\frownbully\detections\20251024_183520.jpg
+2025-10-24 18:35:27,342 - INFO - Running inference on image: C:\Users\katya\AppData\Local\frownbully\detections\20251024_183520.jpg
+2025-10-24 18:35:31,906 - INFO - Inference completed successfully.
+2025-10-24 18:35:31,907 - INFO - Parsing inference results.
+2025-10-24 18:35:31,907 - INFO - Parsed results: {}
+2025-10-24 18:35:31,907 - WARNING - No predictions found for C:\Users\katya\AppData\Local\frownbully\detections\20251024_183520.jpg, skipping database update.
+2025-10-24 18:35:31,907 - INFO - Checking predictions for notifications.
+2025-10-24 18:35:31,914 - INFO - Notification status 'NO' and threshold '0.3' saved to database.
+2025-10-24 18:35:32,920 - INFO - Folder ensured at: C:\Users\katya\AppData\Local\frownbully\detections
+2025-10-24 18:35:32,920 - INFO - Capturing image from webcam.
+2025-10-24 18:35:38,545 - INFO - Image captured successfully: C:\Users\katya\AppData\Local\frownbully\detections\20251024_183532.jpg
+2025-10-24 18:35:38,828 - INFO - Image path saved to database: C:\Users\katya\AppData\Local\frownbully\detections\20251024_183532.jpg
+2025-10-24 18:35:38,828 - INFO - Running inference on image: C:\Users\katya\AppData\Local\frownbully\detections\20251024_183532.jpg
+2025-10-24 18:35:41,535 - INFO - Inference completed successfully.
+2025-10-24 18:35:41,535 - INFO - Parsing inference results.
+2025-10-24 18:35:41,535 - INFO - Parsed results: {'frown_line': 0.555}
+2025-10-24 18:35:41,537 - INFO - Executing SQL: UPDATE detections SET frown_line = ? WHERE image_path = ? with values [0.555, 'C:\\Users\\katya\\AppData\\Local\\frownbully\\detections\\20251024_183532.jpg']
+2025-10-24 18:35:41,543 - INFO - Predictions saved to database for C:\Users\katya\AppData\Local\frownbully\detections\20251024_183532.jpg: {'frown_line': 0.555}
+2025-10-24 18:35:41,543 - INFO - Checking predictions for notifications.
+2025-10-24 18:35:41,543 - INFO - Triggering notification for: frown_line with confidence: 55.50%
+2025-10-24 18:35:41,556 - INFO - Notification status 'YES' and threshold '0.3' saved to database.
+2025-10-24 18:35:42,563 - INFO - Folder ensured at: C:\Users\katya\AppData\Local\frownbully\detections
+2025-10-24 18:35:42,563 - INFO - Capturing image from webcam.
+2025-10-24 18:35:47,840 - INFO - Script terminated by user.

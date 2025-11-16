@@ -1,0 +1,10 @@
+2025-03-23 17:44:59,012 - INFO - Starting the script.
+2025-03-23 17:45:00,021 - INFO - Folder ensured at: C:\Users\katya\AppData\Local\frownbully\detections
+2025-03-23 17:45:00,021 - INFO - Capturing image from webcam.
+2025-03-23 17:45:10,444 - WARNING - Attempt 1: Failed to capture image. Retrying...
+2025-03-23 17:45:11,447 - INFO - Folder ensured at: C:\Users\katya\AppData\Local\frownbully\detections
+2025-03-23 17:45:11,447 - INFO - Capturing image from webcam.
+2025-03-23 17:45:21,610 - WARNING - Attempt 1: Failed to capture image. Retrying...
+2025-03-23 17:45:22,614 - INFO - Folder ensured at: C:\Users\katya\AppData\Local\frownbully\detections
+2025-03-23 17:45:22,615 - INFO - Capturing image from webcam.
+2025-03-23 17:45:32,801 - INFO - Script terminated by user.
