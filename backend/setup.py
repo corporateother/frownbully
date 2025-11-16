@@ -1,7 +1,7 @@
 import sqlite3
 
 # Connect to SQLite database (or create if it doesn't exist)
-conn = sqlite3.connect("wrinkle_detection.db")
+conn = sqlite3.connect("../venv/wrinkle_detection.db")
 cursor = conn.cursor()
 
 # Create table for storing images and predictions

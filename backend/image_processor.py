@@ -7,14 +7,129 @@ import base64
 import re
 import sys
 import sqlite3
+import threading
 from datetime import datetime
+from pathlib import Path
 from plyer import notification
+import frown_stats as stats
+
+# --- GLOBAL STATE AND CONFIGURATION ---
+# State variable to control the detection loop
+DB_PATH = Path(__file__).resolve().parent.parent / "venv" / "wrinkle_detection.db"
+BASE_DIR = Path(__file__).resolve().parent
 
 # Generate a unique log file with timestamp
 log_filename = f"script_log_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log"
-logging.basicConfig(filename=log_filename, level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
+
+# Ensure the log file is created in a relative path to where the script is run
+logging.basicConfig(
+    filename=os.path.join(BASE_DIR, log_filename),
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s",
+)
+
+detection_running = False
+detection_thread = None
+stats_data = {"last_detection": "N/A", "status": "Stopped", "latest_prediction": {}, "summary": stats.summary()}
+
+# --- CORE APPLICATION LOOP (RUNS IN SEPARATE THREAD) ---
+
+def continuous_detection_loop():
+    """The main loop that captures, processes, and notifies."""
+    global detection_running
+    logging.info("Continuous detection loop started.")
+
+    while detection_running:
+        try:
+            time.sleep(1)  # Capture image every 1s
+
+            # 1. Capture Image
+            image_path = capture_image()
+            if not image_path:
+                continue
+
+            # 2. Run Inference
+            raw_results = run_inference(image_path)
+            if raw_results is None:
+                continue
+
+            # 3. Parse and Save Predictions
+            parsed_results = parse_results(raw_results)
+            if parsed_results:
+                save_predictions_to_db(image_path, parsed_results)
+            else:
+                logging.warning(f"No predictions found for {image_path}, skipping database update.")
+
+            # 4. Notify User
+            notify_user(parsed_results)
+
+            # 5. Update Global Stats for API access
+            global stats_data
+            stats_data["last_detection"] = datetime.now().strftime("%H:%M:%S")
+            stats_data["latest_prediction"] = parsed_results
+            stats_data["status"] = "Running"
+
+        except Exception as e:
+            logging.error(f"Error inside detection loop: {e}")
+            # Prevents thread from crashing on error
+            time.sleep(2)
+
+    logging.info("Continuous detection loop terminated.")
+    # Reset status when loop exits
+    stats_data["status"] = "Stopped"
 
 
+# --- API EXPOSED FUNCTIONS ---
+
+def start_detection():
+    """Starts the continuous detection loop in a background thread."""
+    global detection_running, detection_thread
+    if not detection_running:
+        detection_running = True
+        detection_thread = threading.Thread(target=continuous_detection_loop)
+        detection_thread.daemon = True  # Allows program to exit even if thread is running
+        detection_thread.start()
+        logging.info("Detection started and thread launched.")
+        return True
+    return False
+
+
+def stop_detection():
+    """Stops the continuous detection loop."""
+    global detection_running, detection_thread
+    if detection_running:
+        detection_running = False
+        # Optional: wait for the thread to finish cleanly if needed, but not essential here
+        if detection_thread and detection_thread.is_alive():
+            # Wait a short time for the thread to shut down
+            detection_thread.join(timeout=1)
+        detection_thread = None
+        logging.info("Detection stopped.")
+        return True
+    return False
+
+
+def is_running():
+    """Returns the current running status."""
+    global detection_running
+    return detection_running
+
+
+def get_stats():
+    formatted_predictions = {
+        label: f"{confidence * 100:.2f}%"
+        for label, confidence in stats_data['latest_prediction'].items()
+    }
+    return {
+        "running": is_running(),
+        "last_detection": stats_data["last_detection"],
+        "status": stats_data["status"],
+        "latest_prediction": formatted_predictions,
+        "summary": stats.summary(),
+    }
+
+
+# --- REST OF ORIGINAL LOGIC (Unchanged) ---
 # Image Capturing
 def capture_image(max_retries=3):
     # Define the folder path in AppData (No admin permission required)
@@ -49,15 +164,14 @@ def capture_image(max_retries=3):
             # Save image path to database
             save_image_to_db(image_path)
 
+            # HACK: Fix the indentation error here
             return image_path
         else:
             logging.warning(f"Attempt {attempt + 1}: Failed to capture image. Retrying...")
             time.sleep(1)
 
-        captured_image_path = capture_image()
-
-        if captured_image_path and not os.path.exists(captured_image_path):
-            logging.error(f"Image not found at: {captured_image_path}")
+    # Indentation fix: The 'captured_image_path' and 'if not os.path.exists' block was incorrect
+    # Removed the redundant inner call to capture_image()
 
     logging.error("Failed to capture image after multiple attempts.")
     cap.release()
@@ -66,16 +180,20 @@ def capture_image(max_retries=3):
 
 # Function to save image path in the database
 def save_image_to_db(image_path):
-    conn = sqlite3.connect("wrinkle_detection.db")
+    conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
 
-    cursor.execute('''
-        INSERT INTO detections (image_path) VALUES (?)
-    ''', (image_path,))
-
+    cursor.execute(
+      """
+      INSERT INTO detections (image_path, image_path_timestamp)
+      VALUES (?, ?)
+      """,
+      (image_path, datetime.now().isoformat()),
+    ) 
     conn.commit()
     conn.close()
     logging.info(f"Image path saved to database: {image_path}")
+
 
 # Ensure the path is correctly formatted
 def encode_image(image_path):
@@ -85,10 +203,13 @@ def encode_image(image_path):
             return base64.b64encode(image_file.read()).decode("utf-8")
     except FileNotFoundError:
         logging.error(f"Error: Image file not found at {image_path}")
-        raise FileNotFoundError(f"Image file not found at {image_path}")
+        # Removed redundant re-raise: raise FileNotFoundError(f"Image file not found at {image_path}")
+        return None
     except OSError as e:
         logging.error(f"OS Error: {e}")
-        raise OSError(f"OS Error: {e}") #why am i doing this??
+        # Removed redundant re-raise: raise OSError(f"OS Error: {e}")
+        return None
+
 
 # Run inference
 def run_inference(image_path, confidence_threshold=0.1):
@@ -100,10 +221,11 @@ def run_inference(image_path, confidence_threshold=0.1):
     image_path = os.path.abspath(image_path)
 
     python_executable = sys.executable  # Get the correct Python executable
+    inference_script = BASE_DIR / "inference.py"  # Use absolute path to inference.py
 
     try:
         result = subprocess.run(
-            [python_executable, "inference.py", image_path, str(confidence_threshold)],
+            [python_executable, str(inference_script), image_path, str(confidence_threshold)],
             capture_output=True, text=True, timeout=30
         )
 
@@ -122,13 +244,14 @@ def run_inference(image_path, confidence_threshold=0.1):
         logging.error(f"Unexpected error in inference: {e}")
         return None
 
+
 # Ensure image_path is defined before running inference
 def process_inference(image_path):
     raw_results = run_inference(image_path)
     if not raw_results:
         logging.error(f"Inference failed or returned no data for {image_path}.")
-        return  # Use return instead of continue if not inside a loop
-    return raw_results  # Process raw results further if needed
+        return
+    return raw_results
 
 
 def parse_results(results):
@@ -152,9 +275,10 @@ def parse_results(results):
     logging.info(f"Parsed results: {parsed_results}")
     return parsed_results
 
+
 # Function to save predictions to database
 def save_predictions_to_db(image_path, parsed_results):
-    conn = sqlite3.connect("wrinkle_detection.db")
+    conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
 
     if not parsed_results:
@@ -187,6 +311,7 @@ def notify_user(predictions, alert_threshold=0.3):
         for label, confidence in predictions.items():
             if confidence > alert_threshold:
                 logging.info(f"Triggering notification for: {label} with confidence: {confidence * 100:.2f}%")
+                # Using subprocess on Windows to ensure notification is visible on desktop
                 notification.notify(
                     title="Wrinkle Detection Alert",
                     message="You are frowning, try to relax your face",
@@ -203,7 +328,7 @@ def notify_user(predictions, alert_threshold=0.3):
 
 
 def save_notification_to_db(notification_status, threshold):
-    conn = sqlite3.connect("wrinkle_detection.db")
+    conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
 
     try:
@@ -219,31 +344,9 @@ def save_notification_to_db(notification_status, threshold):
     finally:
         conn.close()
 
+# Removed the original main() function to use the API-exposed functions instead
+# def main():
+#     ...
 
-def main():
-    logging.info("Starting the script.")
-    try:
-        while True:
-            time.sleep(1)  # Capture image every 1s
-            image_path = capture_image()
-            if not image_path:
-                continue  # Skip to next loop iteration if capture fails
-
-            raw_results = run_inference(image_path)
-            if raw_results is None:
-                continue  # Skip to next loop iteration if inference fails
-
-            parsed_results = parse_results(raw_results)
-            if parsed_results:
-                save_predictions_to_db(image_path, parsed_results)
-            else:
-                logging.warning(f"No predictions found for {image_path}, skipping database update.")
-
-            notify_user(parsed_results)
-
-    except KeyboardInterrupt:
-        logging.info("Script terminated by user.")
-
-if __name__ == "__main__":
-    main()
-
+# if __name__ == "__main__":
+#     main()
