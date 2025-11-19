@@ -1,0 +1,12 @@
+2025-03-18 19:43:33,297 - INFO - Starting the script.
+2025-03-18 19:43:38,305 - INFO - Folder ensured at: C:\Users\katya\AppData\Local\frownbully\detections
+2025-03-18 19:43:38,305 - INFO - Capturing image from webcam.
+2025-03-18 19:43:45,144 - INFO - Image captured successfully: C:\Users\katya\AppData\Local\frownbully\detections\20250318_194338.jpg
+2025-03-18 19:43:45,439 - INFO - Image path saved to database: C:\Users\katya\AppData\Local\frownbully\detections\20250318_194338.jpg
+2025-03-18 19:43:45,439 - INFO - Running inference on image: C:\Users\katya\AppData\Local\frownbully\detections\20250318_194338.jpg
+2025-03-18 19:43:48,596 - INFO - Inference completed successfully.
+2025-03-18 19:43:48,598 - INFO - Parsing inference results.
+2025-03-18 19:43:48,599 - INFO - Parsed results: {'frown_line': 0.5253}
+2025-03-18 19:43:48,599 - INFO - Checking predictions for notifications.
+2025-03-18 19:43:48,599 - INFO - Triggering notification for: frown_line with confidence: 52.53%
+2025-03-18 19:43:52,578 - INFO - Script terminated by user.

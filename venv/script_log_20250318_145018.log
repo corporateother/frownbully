@@ -1,0 +1,22 @@
+2025-03-18 14:50:18,636 - INFO - Starting the script.
+2025-03-18 14:50:23,640 - INFO - Capturing image from webcam.
+2025-03-18 14:50:30,387 - INFO - Image captured successfully: C:\Users\katya\AppData\Local\frownbully\detections\20250318_145023.jpg
+2025-03-18 14:50:30,683 - INFO - Image path saved to database: C:\Users\katya\AppData\Local\frownbully\detections\20250318_145023.jpg
+2025-03-18 14:50:30,683 - INFO - Running inference on image: C:\Users\katya\AppData\Local\frownbully\detections\20250318_145023.jpg
+2025-03-18 14:50:34,555 - INFO - Inference completed successfully.
+2025-03-18 14:50:34,555 - INFO - Parsing inference results.
+2025-03-18 14:50:34,556 - INFO - Parsed results: {}
+2025-03-18 14:50:34,556 - INFO - Checking predictions for notifications.
+2025-03-18 14:50:39,562 - INFO - Capturing image from webcam.
+2025-03-18 14:50:45,034 - INFO - Image captured successfully: C:\Users\katya\AppData\Local\frownbully\detections\20250318_145039.jpg
+2025-03-18 14:50:45,327 - INFO - Image path saved to database: C:\Users\katya\AppData\Local\frownbully\detections\20250318_145039.jpg
+2025-03-18 14:50:45,327 - INFO - Running inference on image: C:\Users\katya\AppData\Local\frownbully\detections\20250318_145039.jpg
+2025-03-18 14:50:47,977 - INFO - Inference completed successfully.
+2025-03-18 14:50:47,978 - INFO - Parsing inference results.
+2025-03-18 14:50:47,978 - INFO - Parsed results: {}
+2025-03-18 14:50:47,978 - INFO - Checking predictions for notifications.
+2025-03-18 14:50:52,988 - INFO - Capturing image from webcam.
+2025-03-18 14:50:58,484 - INFO - Image captured successfully: C:\Users\katya\AppData\Local\frownbully\detections\20250318_145052.jpg
+2025-03-18 14:50:58,773 - INFO - Image path saved to database: C:\Users\katya\AppData\Local\frownbully\detections\20250318_145052.jpg
+2025-03-18 14:50:58,774 - INFO - Running inference on image: C:\Users\katya\AppData\Local\frownbully\detections\20250318_145052.jpg
+2025-03-18 14:50:59,802 - INFO - Script terminated by user.

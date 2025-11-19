@@ -1,0 +1,30 @@
+2025-11-16 10:34:59,575 - INFO - Serving frontend from: C:\Users\katya\PycharmProjects\PythonProject\frontend\build
+2025-11-16 10:35:03,882 - INFO - Continuous detection loop started.
+2025-11-16 10:35:03,882 - INFO - Detection started and thread launched.
+2025-11-16 10:35:04,885 - INFO - Folder ensured at: C:\Users\katya\AppData\Local\frownbully\detections
+2025-11-16 10:35:04,885 - INFO - Capturing image from webcam.
+2025-11-16 10:35:14,267 - INFO - Image captured successfully: C:\Users\katya\AppData\Local\frownbully\detections\20251116_103504.jpg
+2025-11-16 10:35:14,576 - INFO - Image path saved to database: C:\Users\katya\AppData\Local\frownbully\detections\20251116_103504.jpg
+2025-11-16 10:35:14,578 - INFO - Running inference on image: C:\Users\katya\AppData\Local\frownbully\detections\20251116_103504.jpg
+2025-11-16 10:35:14,704 - ERROR - Inference failed with return code 2
+2025-11-16 10:35:14,704 - ERROR - Error message: C:\Users\katya\AppData\Local\Programs\Python\Python39\python.exe: can't open file 'C:\Users\katya\PycharmProjects\PythonProject\inference.py': [Errno 2] No such file or directory
+
+2025-11-16 10:35:15,721 - INFO - Folder ensured at: C:\Users\katya\AppData\Local\frownbully\detections
+2025-11-16 10:35:15,721 - INFO - Capturing image from webcam.
+2025-11-16 10:35:23,668 - INFO - Image captured successfully: C:\Users\katya\AppData\Local\frownbully\detections\20251116_103515.jpg
+2025-11-16 10:35:23,990 - INFO - Image path saved to database: C:\Users\katya\AppData\Local\frownbully\detections\20251116_103515.jpg
+2025-11-16 10:35:23,990 - INFO - Running inference on image: C:\Users\katya\AppData\Local\frownbully\detections\20251116_103515.jpg
+2025-11-16 10:35:24,113 - ERROR - Inference failed with return code 2
+2025-11-16 10:35:24,113 - ERROR - Error message: C:\Users\katya\AppData\Local\Programs\Python\Python39\python.exe: can't open file 'C:\Users\katya\PycharmProjects\PythonProject\inference.py': [Errno 2] No such file or directory
+
+2025-11-16 10:35:25,127 - INFO - Folder ensured at: C:\Users\katya\AppData\Local\frownbully\detections
+2025-11-16 10:35:25,128 - INFO - Capturing image from webcam.
+2025-11-16 10:35:26,467 - INFO - Detection stopped.
+2025-11-16 10:35:33,333 - INFO - Image captured successfully: C:\Users\katya\AppData\Local\frownbully\detections\20251116_103525.jpg
+2025-11-16 10:35:33,638 - INFO - Image path saved to database: C:\Users\katya\AppData\Local\frownbully\detections\20251116_103525.jpg
+2025-11-16 10:35:33,639 - INFO - Running inference on image: C:\Users\katya\AppData\Local\frownbully\detections\20251116_103525.jpg
+2025-11-16 10:35:33,764 - ERROR - Inference failed with return code 2
+2025-11-16 10:35:33,764 - ERROR - Error message: C:\Users\katya\AppData\Local\Programs\Python\Python39\python.exe: can't open file 'C:\Users\katya\PycharmProjects\PythonProject\inference.py': [Errno 2] No such file or directory
+
+2025-11-16 10:35:33,764 - INFO - Continuous detection loop terminated.
+2025-11-16 10:35:39,098 - INFO - Application closed. Stopping detection logic.

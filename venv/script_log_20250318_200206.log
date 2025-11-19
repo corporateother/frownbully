@@ -1,0 +1,26 @@
+2025-03-18 20:02:06,753 - INFO - Starting the script.
+2025-03-18 20:02:07,756 - INFO - Folder ensured at: C:\Users\katya\AppData\Local\frownbully\detections
+2025-03-18 20:02:07,756 - INFO - Capturing image from webcam.
+2025-03-18 20:02:14,168 - INFO - Image captured successfully: C:\Users\katya\AppData\Local\frownbully\detections\20250318_200207.jpg
+2025-03-18 20:02:14,453 - INFO - Image path saved to database: C:\Users\katya\AppData\Local\frownbully\detections\20250318_200207.jpg
+2025-03-18 20:02:14,453 - INFO - Running inference on image: C:\Users\katya\AppData\Local\frownbully\detections\20250318_200207.jpg
+2025-03-18 20:02:17,986 - INFO - Inference completed successfully.
+2025-03-18 20:02:17,987 - INFO - Parsing inference results.
+2025-03-18 20:02:17,987 - INFO - Parsed results: {}
+2025-03-18 20:02:17,987 - WARNING - No predictions found for C:\Users\katya\AppData\Local\frownbully\detections\20250318_200207.jpg, skipping database update.
+2025-03-18 20:02:17,987 - INFO - Checking predictions for notifications.
+2025-03-18 20:02:18,991 - INFO - Folder ensured at: C:\Users\katya\AppData\Local\frownbully\detections
+2025-03-18 20:02:18,991 - INFO - Capturing image from webcam.
+2025-03-18 20:02:24,108 - INFO - Image captured successfully: C:\Users\katya\AppData\Local\frownbully\detections\20250318_200218.jpg
+2025-03-18 20:02:24,397 - INFO - Image path saved to database: C:\Users\katya\AppData\Local\frownbully\detections\20250318_200218.jpg
+2025-03-18 20:02:24,397 - INFO - Running inference on image: C:\Users\katya\AppData\Local\frownbully\detections\20250318_200218.jpg
+2025-03-18 20:02:26,058 - INFO - Inference completed successfully.
+2025-03-18 20:02:26,058 - INFO - Parsing inference results.
+2025-03-18 20:02:26,059 - INFO - Parsed results: {'crows_feet': 0.42090000000000005}
+2025-03-18 20:02:26,059 - INFO - Executing SQL: UPDATE detections SET crows_feet = ? WHERE image_path = ? with values [0.42090000000000005, 'C:\\Users\\katya\\AppData\\Local\\frownbully\\detections\\20250318_200218.jpg']
+2025-03-18 20:02:26,064 - INFO - Predictions saved to database for C:\Users\katya\AppData\Local\frownbully\detections\20250318_200218.jpg: {'crows_feet': 0.42090000000000005}
+2025-03-18 20:02:26,064 - INFO - Checking predictions for notifications.
+2025-03-18 20:02:26,064 - INFO - No notification triggered for: crows_feet with confidence: 42.09%
+2025-03-18 20:02:27,070 - INFO - Folder ensured at: C:\Users\katya\AppData\Local\frownbully\detections
+2025-03-18 20:02:27,070 - INFO - Capturing image from webcam.
+2025-03-18 20:02:31,919 - INFO - Script terminated by user.

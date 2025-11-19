@@ -1,0 +1,18 @@
+2025-03-23 17:52:40,740 - INFO - Starting the script.
+2025-03-23 17:52:41,744 - INFO - Folder ensured at: C:\Users\katya\AppData\Local\frownbully\detections
+2025-03-23 17:52:41,744 - INFO - Capturing image from webcam.
+2025-03-23 17:52:47,900 - INFO - Image captured successfully: C:\Users\katya\AppData\Local\frownbully\detections\20250323_175241.jpg
+2025-03-23 17:52:48,191 - INFO - Image path saved to database: C:\Users\katya\AppData\Local\frownbully\detections\20250323_175241.jpg
+2025-03-23 17:52:48,191 - INFO - Running inference on image: C:\Users\katya\AppData\Local\frownbully\detections\20250323_175241.jpg
+2025-03-23 17:52:53,210 - INFO - Inference completed successfully.
+2025-03-23 17:52:53,210 - INFO - Parsing inference results.
+2025-03-23 17:52:53,211 - INFO - Parsed results: {'frown_line': 0.7926000000000001, 'gummy_smile': 0.6342}
+2025-03-23 17:52:53,212 - INFO - Executing SQL: UPDATE detections SET frown_line = ?, gummy_smile = ? WHERE image_path = ? with values [0.7926000000000001, 0.6342, 'C:\\Users\\katya\\AppData\\Local\\frownbully\\detections\\20250323_175241.jpg']
+2025-03-23 17:52:53,218 - INFO - Predictions saved to database for C:\Users\katya\AppData\Local\frownbully\detections\20250323_175241.jpg: {'frown_line': 0.7926000000000001, 'gummy_smile': 0.6342}
+2025-03-23 17:52:53,218 - INFO - Checking predictions for notifications.
+2025-03-23 17:52:53,219 - INFO - Triggering notification for: frown_line with confidence: 79.26%
+2025-03-23 17:52:53,230 - INFO - Triggering notification for: gummy_smile with confidence: 63.42%
+2025-03-23 17:52:53,237 - INFO - Notification status 'YES' and threshold '0.3' saved to database.
+2025-03-23 17:52:54,251 - INFO - Folder ensured at: C:\Users\katya\AppData\Local\frownbully\detections
+2025-03-23 17:52:54,252 - INFO - Capturing image from webcam.
+2025-03-23 17:53:00,323 - INFO - Script terminated by user.

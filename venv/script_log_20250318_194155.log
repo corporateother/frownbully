@@ -1,0 +1,27 @@
+2025-03-18 19:41:55,926 - INFO - Starting the script.
+2025-03-18 19:42:00,927 - INFO - Folder ensured at: C:\Users\katya\AppData\Local\frownbully\detections
+2025-03-18 19:42:00,927 - INFO - Capturing image from webcam.
+2025-03-18 19:42:08,151 - INFO - Image captured successfully: C:\Users\katya\AppData\Local\frownbully\detections\20250318_194200.jpg
+2025-03-18 19:42:08,447 - INFO - Image path saved to database: C:\Users\katya\AppData\Local\frownbully\detections\20250318_194200.jpg
+2025-03-18 19:42:08,448 - INFO - Running inference on image: C:\Users\katya\AppData\Local\frownbully\detections\20250318_194200.jpg
+2025-03-18 19:42:11,656 - INFO - Inference completed successfully.
+2025-03-18 19:42:11,657 - INFO - Parsing inference results.
+2025-03-18 19:42:11,658 - INFO - Parsed results: {'frown_line': 0.7863, 'crows_feet': 0.7568}
+2025-03-18 19:42:11,658 - INFO - Checking predictions for notifications.
+2025-03-18 19:42:11,658 - INFO - Triggering notification for: frown_line with confidence: 78.63%
+2025-03-18 19:42:11,663 - INFO - Triggering notification for: crows_feet with confidence: 75.68%
+2025-03-18 19:42:16,670 - INFO - Folder ensured at: C:\Users\katya\AppData\Local\frownbully\detections
+2025-03-18 19:42:16,670 - INFO - Capturing image from webcam.
+2025-03-18 19:42:22,390 - INFO - Image captured successfully: C:\Users\katya\AppData\Local\frownbully\detections\20250318_194216.jpg
+2025-03-18 19:42:22,682 - INFO - Image path saved to database: C:\Users\katya\AppData\Local\frownbully\detections\20250318_194216.jpg
+2025-03-18 19:42:22,682 - INFO - Running inference on image: C:\Users\katya\AppData\Local\frownbully\detections\20250318_194216.jpg
+2025-03-18 19:42:24,993 - INFO - Inference completed successfully.
+2025-03-18 19:42:24,993 - INFO - Parsing inference results.
+2025-03-18 19:42:24,993 - INFO - Parsed results: {}
+2025-03-18 19:42:24,993 - INFO - Checking predictions for notifications.
+2025-03-18 19:42:30,001 - INFO - Folder ensured at: C:\Users\katya\AppData\Local\frownbully\detections
+2025-03-18 19:42:30,001 - INFO - Capturing image from webcam.
+2025-03-18 19:42:35,625 - INFO - Image captured successfully: C:\Users\katya\AppData\Local\frownbully\detections\20250318_194230.jpg
+2025-03-18 19:42:35,921 - INFO - Image path saved to database: C:\Users\katya\AppData\Local\frownbully\detections\20250318_194230.jpg
+2025-03-18 19:42:35,921 - INFO - Running inference on image: C:\Users\katya\AppData\Local\frownbully\detections\20250318_194230.jpg
+2025-03-18 19:42:36,425 - INFO - Script terminated by user.

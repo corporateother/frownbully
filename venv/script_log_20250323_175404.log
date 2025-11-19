@@ -1,0 +1,26 @@
+2025-03-23 17:54:04,383 - INFO - Starting the script.
+2025-03-23 17:54:05,391 - INFO - Folder ensured at: C:\Users\katya\AppData\Local\frownbully\detections
+2025-03-23 17:54:05,391 - INFO - Capturing image from webcam.
+2025-03-23 17:54:11,046 - INFO - Image captured successfully: C:\Users\katya\AppData\Local\frownbully\detections\20250323_175405.jpg
+2025-03-23 17:54:11,331 - INFO - Image path saved to database: C:\Users\katya\AppData\Local\frownbully\detections\20250323_175405.jpg
+2025-03-23 17:54:11,332 - INFO - Running inference on image: C:\Users\katya\AppData\Local\frownbully\detections\20250323_175405.jpg
+2025-03-23 17:54:14,298 - INFO - Inference completed successfully.
+2025-03-23 17:54:14,298 - INFO - Parsing inference results.
+2025-03-23 17:54:14,298 - INFO - Parsed results: {}
+2025-03-23 17:54:14,298 - WARNING - No predictions found for C:\Users\katya\AppData\Local\frownbully\detections\20250323_175405.jpg, skipping database update.
+2025-03-23 17:54:14,298 - INFO - Checking predictions for notifications.
+2025-03-23 17:54:14,303 - INFO - Notification status 'NO' and threshold '0.3' saved to database.
+2025-03-23 17:54:15,313 - INFO - Folder ensured at: C:\Users\katya\AppData\Local\frownbully\detections
+2025-03-23 17:54:15,313 - INFO - Capturing image from webcam.
+2025-03-23 17:54:21,058 - INFO - Image captured successfully: C:\Users\katya\AppData\Local\frownbully\detections\20250323_175415.jpg
+2025-03-23 17:54:21,340 - INFO - Image path saved to database: C:\Users\katya\AppData\Local\frownbully\detections\20250323_175415.jpg
+2025-03-23 17:54:21,340 - INFO - Running inference on image: C:\Users\katya\AppData\Local\frownbully\detections\20250323_175415.jpg
+2025-03-23 17:54:23,847 - INFO - Inference completed successfully.
+2025-03-23 17:54:23,847 - INFO - Parsing inference results.
+2025-03-23 17:54:23,847 - INFO - Parsed results: {}
+2025-03-23 17:54:23,847 - WARNING - No predictions found for C:\Users\katya\AppData\Local\frownbully\detections\20250323_175415.jpg, skipping database update.
+2025-03-23 17:54:23,847 - INFO - Checking predictions for notifications.
+2025-03-23 17:54:23,851 - INFO - Notification status 'NO' and threshold '0.3' saved to database.
+2025-03-23 17:54:24,853 - INFO - Folder ensured at: C:\Users\katya\AppData\Local\frownbully\detections
+2025-03-23 17:54:24,854 - INFO - Capturing image from webcam.
+2025-03-23 17:54:30,223 - INFO - Script terminated by user.
